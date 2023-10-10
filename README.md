@@ -174,9 +174,63 @@ git commit -m "añadido 2.txt"
 
 Salida:
 ```code
+dam@a108pc11:~/my-proyecto-millonario$ touch 2.txt
+dam@a108pc11:~/my-proyecto-millonario$ git add .
+dam@a108pc11:~/my-proyecto-millonario$ git commit -m "Añadido 2.txt"
+[v0.2 5432118] Añadido 2.txt
+ 2 files changed, 86 insertions(+), 5 deletions(-)
+ create mode 100644 2.txt
 
 ```
 
 **Pregunta:** Cuando estamos trabajando con ramas, cual es su fin, y sentido en organizaciones pequeñas/medianas/grandes. Justifica tu respuesta en el fichero README.md.
+
+**Respuesta:**
+
+## Crear rama remota v0.2
+* Subir los cambios al reposiorio remoto.
+
+Operaciones a realizar:
+```code
+git push origin v0.2
+```
+
+Salida:
+
+```code
+dam@a108pc11:~/my-proyecto-millonario$ git push origin v0.2
+Username for 'https://github.com': nalleon
+Password for 'https://nalleon@github.com': 
+Enumerando objetos: 5, listo.
+Contando objetos: 100% (5/5), listo.
+Compresión delta usando hasta 4 hilos
+Comprimiendo objetos: 100% (3/3), listo.
+Escribiendo objetos: 100% (3/3), 977 bytes | 977.00 KiB/s, listo.
+Total 3 (delta 2), reusados 0 (delta 0), pack-reusados 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'v0.2' on GitHub by visiting:
+remote:      https://github.com/nalleon/my-proyecto-millonario/pull/new/v0.2
+remote: 
+To https://github.com/nalleon/my-proyecto-millonario
+ * [new branch]      v0.2 -> v0.2
+```
+
+## Merge directo
+* Posicionarse en la rama master/main según sea tu rama principal.
+* Hacer un merge de la rama v0.2 en la rama master/main.
+
+Operaciones a realizar:
+```code
+git checkout master
+git merge v0.2 -m "merge v0.2 sin conflictos"
+```
+
+Salida:
+```code
+
+```
+
+**Pregunta:** Se tendrían que producir conflictos en esta acción. [Si/No] Justifica tu respuesta en el fichero README.md.
 
 **Respuesta:**
