@@ -6,7 +6,7 @@ Nabil León Álvarez - 1ºDAM
 * [Ejercicio 1](#ejercicio-1)
 
 
-## Ejercicio 1
+## Iniciación de la tarea
 * Crear un repositorio en vuestro GitHub llamado my-proyecto-millonario.
 * Clonar vuestro repositio en local.
 * Crear (si no lo habéis creado ya) en vuestro repositorio local un documento README.md. __El README.md ha sido añadido durante la creación del repositorio, por lo tanto este paso no es realizado.__
@@ -55,10 +55,47 @@ To https://github.com/nalleon/my-proyecto-millonario
 * Crear en el repositorio local una carpeta llamada privada.
 * Realizar los cambios oportunos para que tanto el archivo como la carpeta sean ignorados por git.
 
-
-
 **Pregunta:** el fichero y el directorio privado debe de subir al repositorio si se encuentra añadido al fichero .gitingnore. [Si/No]. Justifica tu respuesta en el fichero README.md.
 
+Operaciones a realizar:
 ```code
+touch privado.txt
+mkdir privada
+echo "privado.txt" >> .gitignore
+echo "/privada" >> .gitignore
+git add .
+git commit -m "añadido fichero .gitignore"
+```
 
+Salida:
+```code
+dam@a108pc11:~/my-proyecto-millonario$ touch privado.txt
+dam@a108pc11:~/my-proyecto-millonario$ mkdir privada
+dam@a108pc11:~/my-proyecto-millonario$ echo "privado.txt" >> .gitignore
+dam@a108pc11:~/my-proyecto-millonario$ echo "/privada" >> .gitignore
+dam@a108pc11:~/my-proyecto-millonario$ git add .
+dam@a108pc11:~/my-proyecto-millonario$ git commit -m "Añadido fichero .gitignore."
+[main fb30080] Añadido fichero .gitignore.
+ 2 files changed, 50 insertions(+), 2 deletions(-)
+ create mode 100644 .gitignore
+dam@a108pc11:~/my-proyecto-millonario$ 
+
+
+```
+**Respuesta:**
+
+## Añadir fichero 1.txt
+* Añadir fichero 1.txt al repositorio local.
+
+**Pregunta:** Si he ejecutado las acciones add y commit, que realiza cada una sobre el/los ficheros. Justifica tu respuesta en el fichero README.md.
+
+Operaciones a realizar:
+```code
+touch 1.txt
+git add .
+git commit -m "añadido 1.txt"
+```
+
+Salida:
+```code
 ```
