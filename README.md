@@ -281,7 +281,11 @@ git commit -m "adios en 1.txt"
 
 Salida:
 ```code
-
+am@a108pc11:~/my-proyecto-millonario$ echo "Adios" >> 1.txt
+çdam@a108pc11:~/my-proyecto-millonario$ git add .
+dam@a108pc11:~/my-proyecto-millonario$ git commit -m "Adios en 1.txt"
+[v0.2 58c1f05] Adios en 1.txt
+ 1 file changed, 1 insertion(+)
 ```
 * Posicionarse de nuevo en la rama master/main y hacer un merge con la rama v0.2
 
