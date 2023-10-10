@@ -247,8 +247,6 @@ Fast-forward (no commit created; -m option ignored)
 
 ## Merge con conflicto
 * En la rama maste/main poner Hola en el fichero 1.txt y hacer commit. 
-* Posicionarse en la rama v0.2 y poner Adios en el fichero "1.txt" y hacer commit.
-* Posicionarse de nuevo en la rama master/main y hacer un merge con la rama v0.2
 
 Operaciones a realizar:
 ```code
@@ -256,10 +254,39 @@ git checkout master
 echo "Hola" >> 1.txt
 git add .
 git commit -m "hola en 1.txt"
+```
+
+Salida:
+```code
+dam@a108pc11:~/my-proyecto-millonario$ git checkout main
+M	README.md
+Ya en 'main'
+Tu rama está adelantada a 'origin/main' por 2 commits.
+  (usa "git push" para publicar tus commits locales)
+dam@a108pc11:~/my-proyecto-millonario$ echo "Hola" >> 1.txt
+dam@a108pc11:~/my-proyecto-millonario$ git add .
+dam@a108pc11:~/my-proyecto-millonario$ git commit -m "Hola en 1.txt"
+[main cb6dcbe] Hola en 1.txt
+ 2 files changed, 39 insertions(+), 1 deletion(-)
+```
+* Posicionarse en la rama v0.2 y poner Adios en el fichero "1.txt" y hacer commit.
+
+Operaciones a realizar:
+```code
 git checkout v0.2
 echo "Adios" >> 1.txt
 git add .
 git commit -m "adios en 1.txt"
+```
+
+Salida:
+```code
+
+```
+* Posicionarse de nuevo en la rama master/main y hacer un merge con la rama v0.2
+
+Operaciones a realizar:
+```code
 git checkout master
 git merge v0.2
 vim 1.txt
