@@ -55,8 +55,6 @@ To https://github.com/nalleon/my-proyecto-millonario
 * Crear en el repositorio local una carpeta llamada privada.
 * Realizar los cambios oportunos para que tanto el archivo como la carpeta sean ignorados por git.
 
-**Pregunta:** el fichero y el directorio privado debe de subir al repositorio si se encuentra añadido al fichero .gitingnore. [Si/No]. Justifica tu respuesta en el fichero README.md.
-
 Operaciones a realizar:
 ```code
 touch privado.txt
@@ -80,14 +78,15 @@ dam@a108pc11:~/my-proyecto-millonario$ git commit -m "Añadido fichero .gitignor
  create mode 100644 .gitignore
 dam@a108pc11:~/my-proyecto-millonario$ 
 
-
 ```
+**Pregunta:** el fichero y el directorio privado debe de subir al repositorio si se encuentra añadido al fichero .gitingnore. [Si/No]. Justifica tu respuesta en el fichero README.md.
+
 **Respuesta:**
 
 ## Añadir fichero 1.txt
 * Añadir fichero 1.txt al repositorio local.
 
-**Pregunta:** Si he ejecutado las acciones add y commit, que realiza cada una sobre el/los ficheros. Justifica tu respuesta en el fichero README.md.
+
 
 Operaciones a realizar:
 ```code
@@ -98,4 +97,86 @@ git commit -m "añadido 1.txt"
 
 Salida:
 ```code
+dam@a108pc11:~/my-proyecto-millonario$ touch 1.txt
+dam@a108pc11:~/my-proyecto-millonario$ git add .
+dam@a108pc11:~/my-proyecto-millonario$ git commit -m "Añadido 1.txt"
+[main 96bb08f] Añadido 1.txt
+ 2 files changed, 40 insertions(+), 3 deletions(-)
+ create mode 100644 1.txt
 ```
+
+**Pregunta:** Si he ejecutado las acciones add y commit, que realiza cada una sobre el/los ficheros. Justifica tu respuesta en el fichero README.md.
+
+**Respuesta:**
+
+
+## Tag v.01
+* Crear un tag v0.1.
+* Subir los cambios al repositorio remoto.
+
+
+Operaciones a realizar:
+
+```code
+git tag v0.1
+git push --tag origin master
+```
+
+Salida:
+```code
+dam@a108pc11:~/my-proyecto-millonario$ git tag v0.1
+dam@a108pc11:~/my-proyecto-millonario$ git push --tag origin main
+Username for 'https://github.com': nalleon
+Password for 'https://nalleon@github.com': 
+Enumerando objetos: 10, listo.
+Contando objetos: 100% (10/10), listo.
+Compresión delta usando hasta 4 hilos
+Comprimiendo objetos: 100% (6/6), listo.
+Escribiendo objetos: 100% (8/8), 1.87 KiB | 1.87 MiB/s, listo.
+Total 8 (delta 1), reusados 0 (delta 0), pack-reusados 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/nalleon/my-proyecto-millonario
+   12fbd70..96bb08f  main -> main
+ * [new tag]         v0.1 -> v0.1
+dam@a108pc11:~/my-proyecto-millonario$ 
+```
+**Pregunta:** ¿Qué es un tag sobre un repositorio git, en nuestro caso Github?. Justifica tu respuesta en el fichero README.md.
+
+**Respuesta:**
+
+## Crear una rama v0.2
+* Crear una rama v0.2.
+* Posiciona tu carpeta de trabajo en esta rama.
+
+Operaciones a realizar:
+```code
+git branch v0.2
+git checkout v0.2
+```
+
+Salida:
+```code
+dam@a108pc11:~/my-proyecto-millonario$ git branch v0.2
+dam@a108pc11:~/my-proyecto-millonario$ git checkout v0.2
+M	README.md
+Cambiado a rama 'v0.2'
+```
+
+## Añadir fichero 2.txt
+* Añadir un fichero 2.txt en la rama v0.2.
+
+Operaciones a realizar:
+```code
+touch 2.txt
+git add .
+git commit -m "añadido 2.txt"
+```
+
+Salida:
+```code
+
+```
+
+**Pregunta:** Cuando estamos trabajando con ramas, cual es su fin, y sentido en organizaciones pequeñas/medianas/grandes. Justifica tu respuesta en el fichero README.md.
+
+**Respuesta:**
