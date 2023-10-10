@@ -228,9 +228,46 @@ git merge v0.2 -m "merge v0.2 sin conflictos"
 
 Salida:
 ```code
-
+dam@a108pc11:~/my-proyecto-millonario$ git checkout main
+Cambiado a rama 'main'
+Tu rama está actualizada con 'origin/main'.
+dam@a108pc11:~/my-proyecto-millonario$ git merge v0.2 -m "merge v0.2 sin conflictos"
+Actualizando 96bb08f..8649519
+Fast-forward (no commit created; -m option ignored)
+ 2.txt     |   0
+ README.md | 145 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ 2 files changed, 140 insertions(+), 5 deletions(-)
+ create mode 100644 2.txt
 ```
 
 **Pregunta:** Se tendrían que producir conflictos en esta acción. [Si/No] Justifica tu respuesta en el fichero README.md.
 
 **Respuesta:**
+
+
+## Merge con conflicto
+* En la rama maste/main poner Hola en el fichero 1.txt y hacer commit. 
+* Posicionarse en la rama v0.2 y poner Adios en el fichero "1.txt" y hacer commit.
+* Posicionarse de nuevo en la rama master/main y hacer un merge con la rama v0.2
+
+Operaciones a realizar:
+```code
+git checkout master
+echo "Hola" >> 1.txt
+git add .
+git commit -m "hola en 1.txt"
+git checkout v0.2
+echo "Adios" >> 1.txt
+git add .
+git commit -m "adios en 1.txt"
+git checkout master
+git merge v0.2
+vim 1.txt
+git add .
+git commit -m "arreglado merge en 1.txt"
+```
+
+Salida:
+```code
+
+```
