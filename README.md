@@ -3,7 +3,18 @@ Practica de ETS: Manipulación Avanzada en Git (trabajo con tags y ramas).
 Nabil León Álvarez - 1ºDAM
 
 ## Índice
-* [Ejercicio 1](#ejercicio-1)
+* [Iniciacion tareas](#iniciación-de-la-tarea)
+* [Ignorar archivos](#ignorar-archivos)
+* [Añadir fichero 1.txt](#añadir-fichero-1txt)
+* [Tag v0.1](#tag-v01)
+* [Crear una rama v0.2](#crear-una-rama-v02)
+* [Añadir fichero 2.txt](#añadir-fichero-2txt)
+* [Crear rama remota v0.2](#crear-rama-remota-v02)
+* [Merge directo](#merge-directo)
+* [Merge con conflicto y arreglar conflicto](#merge-con-conflicto-y-arreglar-conflicto)
+* [Listado de ramas](#listado-de-ramas)
+* [Borrar rama](#borrar-rama)
+* [Listado de cambios](#listado-de-cambios)
 
 
 ## Iniciación de la tarea
@@ -81,7 +92,7 @@ dam@a108pc11:~/my-proyecto-millonario$
 ```
 **Pregunta:** el fichero y el directorio privado debe de subir al repositorio si se encuentra añadido al fichero .gitingnore. [Si/No]. Justifica tu respuesta en el fichero README.md.
 
-**Respuesta:**
+**Respuesta:** No, el fichero .gitignore funciona de manera que independiene a que si el archivo es privado o no, este no sera subido a git y se vera desde el repositorio en la nube. 
 
 ## Añadir fichero 1.txt
 * Añadir fichero 1.txt al repositorio local.
@@ -107,7 +118,7 @@ dam@a108pc11:~/my-proyecto-millonario$ git commit -m "Añadido 1.txt"
 
 **Pregunta:** Si he ejecutado las acciones add y commit, que realiza cada una sobre el/los ficheros. Justifica tu respuesta en el fichero README.md.
 
-**Respuesta:**
+**Respuesta:**  La acción add se utiliza para seleccionar los cambios que se van a realizar en un fichero previamente a subirse a la nube, este además se ve complementa con la acción commit, la cual confirma los cambios a realizar (al añadir -m podemos incluir un comentario relacionado).
 
 
 ## Tag v.01
@@ -142,7 +153,7 @@ dam@a108pc11:~/my-proyecto-millonario$
 ```
 **Pregunta:** ¿Qué es un tag sobre un repositorio git, en nuestro caso Github?. Justifica tu respuesta en el fichero README.md.
 
-**Respuesta:**
+**Respuesta:** Los tags se utilizan (en nuestro caso en GitHub) para dejar una referencia/marca de versiones anteriores.
 
 ## Crear una rama v0.2
 * Crear una rama v0.2.
@@ -185,7 +196,7 @@ dam@a108pc11:~/my-proyecto-millonario$ git commit -m "Añadido 2.txt"
 
 **Pregunta:** Cuando estamos trabajando con ramas, cual es su fin, y sentido en organizaciones pequeñas/medianas/grandes. Justifica tu respuesta en el fichero README.md.
 
-**Respuesta:**
+**Respuesta:** Las ramas son uno de los pilares fundamentales de la organización al trabajar en un proyecto de Git, ya que permiten el aislamiento de cambios para llevar acabo correciones o añadir cambios. Las organizaciones pequeñas son principalmente utilizadas para evitar conflictos mientras que las medianas tienen un uso de cara a la gestión de multiples versiones, y las grandes se encargan de la cordinación de proyectos complejos.
 
 ## Crear rama remota v0.2
 * Subir los cambios al reposiorio remoto.
@@ -242,10 +253,10 @@ Fast-forward (no commit created; -m option ignored)
 
 **Pregunta:** Se tendrían que producir conflictos en esta acción. [Si/No] Justifica tu respuesta en el fichero README.md.
 
-**Respuesta:**
+**Respuesta:** No se produjo ningún conflicto al fusionar las ramas. Los cambios y contenidos de la rama principal main y la rama v0.2 coinciden.
 
 
-## Merge con conflicto
+## Merge con conflicto y arreglar conflicto
 * En la rama maste/main poner Hola en el fichero 1.txt y hacer commit. 
 
 Operaciones a realizar:
@@ -300,5 +311,94 @@ git commit -m "arreglado merge en 1.txt"
 
 Salida:
 ```code
+dam@a108pc11:~/my-proyecto-millonario$ git checkout main
+Cambiado a rama 'main'
+Tu rama está adelantada a 'origin/main' por 4 commits.
+  (usa "git push" para publicar tus commits locales)
+dam@a108pc11:~/my-proyecto-millonario$ git merge v0.2
+Auto-fusionando 1.txt
+CONFLICTO (contenido): Conflicto de fusión en 1.txt
+Fusión automática falló; arregle los conflictos y luego realice un commit con el resultado.
+dam@a108pc11:~/my-proyecto-millonario$ vim 1.txt
+No se ha encontrado la orden «vim», pero se puede instalar con:
+apt install vim         # version 2:8.2.3995-1ubuntu2.12, or
+apt install vim-tiny    # version 2:8.2.3995-1ubuntu2.12
+apt install vim-athena  # version 2:8.2.3995-1ubuntu2.12
+apt install vim-gtk3    # version 2:8.2.3995-1ubuntu2.12
+apt install vim-nox     # version 2:8.2.3995-1ubuntu2.12
+apt install neovim      # version 0.6.1-3
+Solicite al administrador que instale uno de ellos.
+dam@a108pc11:~/my-proyecto-millonario$ vi 1.txt
+dam@a108pc11:~/my-proyecto-millonario$ vi 1.txt
+dam@a108pc11:~/my-proyecto-millonario$ git checkout v0.2
+1.txt: needs merge
+error: necesitas resolver tu índice actual primero
+dam@a108pc11:~/my-proyecto-millonario$ vi 1.txt
+dam@a108pc11:~/my-proyecto-millonario$ git add .
+dam@a108pc11:~/my-proyecto-millonario$ git commit -m "Arreglado merge en 1.txt"
+[main f49d5e0] Arreglado merge en 1.txt
+dam@a108pc11:~/my-proyecto-millonario$ 
+```
 
+
+## Listado de ramas
+* Listar las ramas con merge y las ramas sin merge.
+
+Operaciones a realizar:
+```code
+git branch --merged
+git branch --no-merged
+```
+
+Salida:
+```code
+dam@a108pc11:~/my-proyecto-millonario$ git branch --merged
+* main
+  v0.2
+dam@a108pc11:~/my-proyecto-millonario$ git branch --no-merged
+dam@a108pc11:~/my-proyecto-millonario$ 
+```
+
+## Borrar rama
+* Crear un tag v0.2
+* Borrar la rama v0.2
+
+Operaciones a realizar:
+```code
+git tag v0.2
+git branch -d v0.2
+```
+
+Salida:
+```code
+dam@a108pc11:~/my-proyecto-millonario$ git tag v0.2
+dam@a108pc11:~/my-proyecto-millonario$ git branch -D v0.2
+Eliminada la rama v0.2 (era 58c1f05).
+```
+
+## Listado de cambios
+* Listar los distintos commits con sus ramas y sus tags.
+
+Operaciones a realizar:
+```code
+git config --global alias.list 'log --oneline --decorate --graph --all'
+git list
+```
+
+Salida:
+```code
+dam@a108pc11:~/my-proyecto-millonario$ git config --global alias.list 'log --oneline --decorate --graph --all'
+git list
+*   f49d5e0 (HEAD -> main, tag: v0.2) Arreglado merge en 1.txt
+|\  
+| * 58c1f05 Adios en 1.txt
+* | 1d15376 Actualización del README
+* | cb6dcbe Hola en 1.txt
+|/  
+* 8649519 Actualización del README
+* 5432118 (origin/v0.2) Añadido 2.txt
+* 96bb08f (tag: v0.1, origin/main, origin/HEAD) Añadido 1.txt
+* fb30080 Añadido fichero .gitignore.
+* 12fbd70 Commit inicial.
+* 7f6b0a0 Initial commit
 ```
