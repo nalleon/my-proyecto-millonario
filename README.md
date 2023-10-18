@@ -21,7 +21,7 @@ Nabil León Álvarez - 1ºDAM
 * Crear un repositorio en vuestro GitHub llamado my-proyecto-millonario.
 * Clonar vuestro repositio en local.
 * Crear (si no lo habéis creado ya) en vuestro repositorio local un documento README.md. __El README.md ha sido añadido durante la creación del repositorio, por lo tanto este paso no es realizado.__
-* Añadir al README.md los comanddos utilizados hasta ahora y hacer un coomit inicial con el mensaje commit inicial.
+* Añadir al README.md los dos utilizados hasta ahora y hacer un coomit inicial con el mensaje commit inicial.
 * Subir los cambios al repositorio remoto.
 
 Operaciones realizadas:
